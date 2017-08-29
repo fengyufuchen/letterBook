@@ -28,7 +28,6 @@ public class UserCommentController {
 	private CommentService commentService;
 
 	@Autowired
-
 	private BookService bookService;
 
 	@RequestMapping(value = "/userComment/commentsPage")
