@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>EAGLECLOTHES Bootstarp responsive Website Template| Single-page</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.useso.com/css?family=Yanone+Kaffeesatz:400,200,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--webfont-->
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/etalage.css">
+<script src="js/jquery.etalage.min.js"></script>
+<script>
+			jQuery(document).ready(function($){
+
+				$('#etalage').etalage({
+					thumb_image_width: 300,
+					thumb_image_height: 400,
+					source_image_width: 800,
+					source_image_height: 1000,
+					show_hint: true,
+					click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				});
+
+			});
+		</script>
+<link type="text/css" rel="stylesheet" href="css/easy-responsive-tabs.css" />
+<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion           
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+	    <script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div class="user-desc">
+		<div class="container">
+			<ul>
+				<li><a href="checkout.html">退出登录</a></li>
+				<li><i class="user"></i><a href="account.html">admin</a></li>
+				<li><i class="cart"></i><a href="#">购物车所含商品数量</a></li>
+			</ul>
+		</div>
+		</div>
+		<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				</div>
+				<div class="top-menu">
+				<span class="menu"> </span>
+					<ul class="cl-effect-15">
+						<li><a href="index.html" data-hover="主页">主页</a></li>
+						<li><a class="active" href="products.html">书籍中心</a></li>
+					</ul>
+				</div>
+				<!--script-nav-->
+				<script>
+				$("span.menu").click(function(){
+				$(".top-menu ul").slideToggle("slow" , function(){
+				});
+				});
+				</script>
+				<!--script-nav-->
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</div>
+<!-- header-section-ends -->
+	<!-- start content -->
+	
+	<div class="single">
+			<!-- start span1_of_1 -->
+			<div class="left_content">
+			<div class="span_1_of_left">
+				<div class="grid images_3_of_2">
+						<ul id="etalage">
+							<li>
+								<a href="optionallink.html">
+									<img class="etalage_thumb_image" src="images/d2.jpg" class="img-responsive" />
+									<img class="etalage_source_image" src="images/d2.jpg" class="img-responsive" title="" />
+								</a>
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" />
+								<img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/d2.jpg" class="img-responsive"  />
+								<img class="etalage_source_image" src="images/d2.jpg"class="img-responsive"  />
+							</li>
+						    <li>
+								<img class="etalage_thumb_image" src="images/d3.jpg" class="img-responsive"  />
+								<img class="etalage_source_image" src="images/d3.jpg"class="img-responsive"  />
+							</li>
+						</ul>
+						 <div class="clearfix"></div>		
+				  </div>
+
+			<!-- start span1_of_1 -->
+			<div class="span1_of_1_des">
+				  <div class="desc1">
+					<h3>红楼梦</h3>
+					<p>红楼梦(上下)人民文学出版社 曹雪芹著 四大名著红楼梦白话文原版原著 文言文青少年版 正版包邮青少版中国古典文学名著书籍图书</p>
+					<h5>Rs. 399 </h5>
+					<div class="available">
+						<h4>请选择商品属性</h4>
+						<ul>
+							<!-- <li>Color:
+								<select>
+								<option>Silver</option>
+								<option>Black</option>
+								<option>Dark Black</option>
+								<option>Red</option>
+							</select></li>
+							<li>Size:
+								<select>
+									<option>L</option>
+									<option>XL</option>
+									<option>S</option>
+									<option>M</option>
+								</select>
+							</li> -->
+							<li>数量:
+								<select>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</li>
+						</ul>
+						<div class="btn_form">
+							<form>
+								<input type="submit" value="加入购物车" title="" />
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<!-- <div class="filter-by-color"> 
+				<h3>Filter by Color</h3>
+				<ul class="w_nav2">
+				<li><a class="color1" href="#"></a></li>
+				<li><a class="color2" href="#"></a></li>
+				<li><a class="color3" href="#"></a></li>
+				<li><a class="color4" href="#"></a></li>
+				<li><a class="color5" href="#"></a></li>
+				<li><a class="color10" href="#"></a></li>
+				<li><a class="color7" href="#"></a></li>
+				<li><a class="color8" href="#"></a></li>
+				<li><a class="color9" href="#"></a></li>
+				<li><a class="color10" href="#"></a></li>
+				<li><a class="color6" href="#"></a></li>
+				<li><a class="color13" href="#"></a></li>
+				<li><a class="color14" href="#"></a></li>
+				<li><a class="color15" href="#"></a></li>
+				<li><a class="color16" href="#"></a></li>
+				<li><a class="color17" href="#"></a></li>
+				<li><a class="color1" href="#"></a></li>
+				<li><a class="color3" href="#"></a></li>
+				<li><a class="color2" href="#"></a></li> -->
+			</ul>
+
+			</div>
+			   	 </div>
+			   	</div>
+					<div class="clearfix"></div>
+				</div>
+			   
+			   	<!-- start tabs -->
+			    <!--Horizontal Tab-->
+        <div id="horizontalTab">
+            <ul class="resp-tabs-list">
+                <li>商品详情</li>
+                <li>评价</li>
+            </ul>
+            <div class="resp-tabs-container">
+                <div class="tab-content">
+                    
+					<ul>
+					<li>编辑推荐</li>
+						<p>
+						《红楼梦(人民文学版)(套装上下册)》编辑推荐：如果你还在为了阅读或收藏价格昂贵的中国古典名著而在书架前徘徊，那么现在你不用愁了，该版的《红楼梦》，不仅价格便宜、印刷美观、装帧古朴，收藏、送人都让你特有面子！实为古典小说的最佳普及本！国内最权威版本！畅销三十余年，行销四百万套。冯其庸先生领衔，中国红学会专家集体校注，人民文学出版社组织专家十余年编校，历经三次修订。2008年新版电视剧《红楼梦》导演李少红指定唯一底本。
+						 						 
+						  </p>
+
+					
+<!-- 								<li>Research</li>
+								<li>Design and Development</li>
+								<li>Porting and Optimization</li>
+								<li>System integration</li>-->
+								<li>媒体推荐书评</li> 
+								<p>  
+									本书初版于一九八二年三月，距今瞬已十二年。本书初版以来，受到广大读者和专家们的欢迎，也得到了不少指正。这十二年的岁月，使我们进一步认识到，我闪当时确定的几个原则是正确的：一是我们所选择的底本——庚辰本，确是一个学术价值很高、接近曹雪芹原稿的珍贵本子，我们以此为底本，就使这相校本有了很好的基础；二是我们确定的校勘原则（详见《校注凡例》）也是正确的，这样就使我们的校勘工作做到了审慎和准确，不至于随意改动底本文字，从而较好地保持了原本的历史面貌；三是我们确定的注释原则（见《校注凡例》）也是切合实际的，对象适中，繁简得宜，因而使得本书避免臃肿烦琐之病。 </p>
+
+								<li>作者简介</li>
+								<p>曹雪芹(1715/1724～1763/1764/1765)，清代小说家。名沾（读作zhān ），字梦阮，雪芹是其号，又号芹圃、芹溪。祖籍辽宁辽阳（一说辽宁铁岭，一说沈阳，一说河北丰润），先世原是汉族，后为满洲正白旗“包衣”人（“包衣”系满语音译，意思是家奴）。
+								高鹗，生卒年: 约1738—约1815，清代文学家。字兰墅，一字云士。因酷爱小说《红楼梦》，别号“红楼外史”。汉军镶黄旗内务府人。祖籍铁岭（今属辽宁），先世清初即寓居北京。少年时喜冶游。中年一度在外课馆。熟谙经史，工于八股文，诗词、小说、戏曲、绘画及金石之学亦颇通晓。诗宗盛唐，词风近于花间派，论文则“辞必端其本，修之乃立诚”，强调以意为主。他热衷仕进，累试不第，乾隆五十三年(1788)，始为顺天乡试举人。六十年进士。历官内阁中书，内阁侍读。嘉庆六年(1801)为顺天乡试同考官。十四年，由侍读选江南道监察御史。十八年，升刑科给事中。在任以“操守谨、政事勤、才具长”见称。晚年家贫官冷，两袖清风。所以虽著作如林，却多未及问世而赍志以终。
+								</p>
+								
+							</ul>
+				</div>
+               
+                <div class="tab-content">
+                   <p class="para top">
+                   <!-- <span>LOREM IPSUM</span> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p> -->
+							<ul>
+								<!-- <li>Research</li>
+								<li>Design and Development</li>
+								<li>Porting and Optimization</li>
+								<li>System integration</li>
+								<li>Verification, Validation and Testing</li>
+								<li>Maintenance and Support</li> -->
+								<li>甲</li>
+								<p>书很好，非常棒，物流好几把快</p>
+								<li>乙</li> 
+								<p> 货收到了，贼几把快 </p>
+							</ul>
+                </div>
+            </div>
+        </div>
+					
+		         	<!-- end tabs -->
+			   	</div>
+		
+			
+					<!-- end sidebar -->
+          	    <div class="clearfix"></div>
+	       </div>	
+		   </div>
+	<!-- end content -->
+	</div>
+</div>
+</div>	
+<!-- content-section-ends -->	
+<!-- contact-section-starts -->
+	
+	<!-- contact-section-ends -->
+	<!-- footer-section-starts -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-6 bottom-menu">
+				<ul>
+					<li><a href="index.html">主页</a></li>
+					<li><a href="#">书籍中心</a></li>
+				</ul>
+			</div>
+			<div class="col-md-6 copy-rights">
+				<p>&copy; 2015 Template by <a href="http://www.genban.org" target="target_blank">跟版网</a></p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- footer-section-ends -->
+</body>
+</html>

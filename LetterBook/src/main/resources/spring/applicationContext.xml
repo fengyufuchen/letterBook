@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<context:component-scan base-package="com.sachin.bl" />
+
+	<context:component-scan base-package="com.test" />
+
+	<context:property-placeholder location="classpath:properties/*.properties" />
+
+
+	<!-- 配置注解驱动，自动注入最新版的处理器映射器以及处理器适配器 -->
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+	<!-- 因为我们的配置拦截路径是/这会导致所有的请求都被拦截 ，所以这里要配置静态资源的处理映射 -->
+
+	<mvc:resources location="/styles/bootstrap-3.3.5-dist/"
+		mapping="/styles/bootstrap-3.3.5-dist/**"></mvc:resources>
+
+	<mvc:resources location="/styles/css/" mapping="/styles/css/**"></mvc:resources>
+
+	<mvc:resources location="/styles/font-awesome/" mapping="/styles/font-awesome/**"></mvc:resources>
+
+	<mvc:resources location="/styles/images/" mapping="/styles/images/**"></mvc:resources>
+
+	<mvc:resources location="/styles/jquery-validation-1.14.0/"
+		mapping="/styles/jquery-validation-1.14.0/**"></mvc:resources>
+
+	<mvc:resources location="/styles/js/" mapping="/styles/js/**"></mvc:resources>
+
+	<mvc:resources location="/common/" mapping="/common/**"></mvc:resources>
+
+
+
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**/**" />
+			<!-- 不拦截的url -->
+			<mvc:exclude-mapping path="/user/login" />
+			<mvc:exclude-mapping path="/user/register" />
+			<mvc:exclude-mapping path="/user/toregister" />
+			<mvc:exclude-mapping path="/style/**" />
+
+			<bean class="com.sachin.bl.initerceptor.UrlInterceptor">
+				<property name="allowUrls">
+					<list>
+						<!-- 如果请求中包含以下路径，则不进行拦截 -->
+						<value>style</value>
+						<value>js</value>
+						<value>css</value>	
+					</list>
+				</property>
+
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${booksonline.driverClassName}" />
+		<property name="url" value="${booksonline.url}" />
+		<property name="username" value="${booksonline.username}" />
+		<property name="password" value="${booksonline.password}" />
+	</bean>
+
+
+
+
+	<!-- Spring封装平台sessionFactory. -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.sachin.bl.entities.AdminTable</value>
+				<value>com.sachin.bl.entities.UserTable</value>
+				<value>com.sachin.bl.entities.BusinessTable</value>
+				<value>com.sachin.bl.entities.BookTable</value>
+				<value>com.sachin.bl.entities.OrderTable</value>
+				<value>com.sachin.bl.entities.OrderContentTable</value>
+				<value>com.sachin.bl.entities.ShopCartTable</value>
+				<value>com.sachin.bl.entities.ShopCartContentTable</value>
+				<value>com.sachin.bl.entities.CommentTable</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQL5InnoDBDialect
+				</prop>
+				<prop key="hibernate.hbm3ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 封装模板 -->
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<!-- 事务管理 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="bussinessService"
+			expression="(execution(public * com.sachin.bl.service.impl.*.*(..))) " />
+		<aop:advisor pointcut-ref="bussinessService" advice-ref="txAdvice" />
+	</aop:config>
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 -->
+			<tx:method name="get*" read-only="true" />
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!--初始化bean获取工具类 -->
+	<!-- <bean id="springContext" class="com.booksonline.utils.SpringContext"></bean> -->
+
+
+</beans>

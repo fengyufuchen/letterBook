@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>EAGLECLOTHES Bootstarp responsive Website Template| Home</title>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Custom Theme files -->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/demo1.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Custom Theme files -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!--webfont-->
+	<link href='http://fonts.useso.com/css?family=Yanone+Kaffeesatz:400,200,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.useso.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.useso.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+	<!-- JavaScript includes -->
+	<script src="js/ipresenter.packed.js"></script>
+	<script>
+			$(document).ready(function(){
+				$('#ipresenter').iPresenter({
+					timerPadding: -1,
+					controlNav: true,
+					controlNavThumbs: true,
+					controlNavNextPrev: false
+				});
+			});
+		</script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div class="user-desc">
+		<div class="container">
+			<ul>
+				<li>
+					<a href="checkout.html">退出登录</a>
+				</li>
+				<li> <i class="user"></i>
+					<a href="account.html">管理员</a>
+				</li>
+				<li> <i class="cart"></i>
+					<a href="#">购物车含有的数量</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html">
+						<img src="images/logo.png" alt="" />
+					</a>
+				</div>
+				<div class="top-menu">
+					<span class="menu"></span>
+					<ul class="cl-effect-15">
+						<li>
+							<a class="active" href="index.html">主页</a>
+						</li>
+						<li>
+							<a href="products.html" data-hover="书籍中心">书籍中心</a>
+						</li>
+					</ul>
+				</div>
+				<!--script-nav-->
+				<script>
+				$("span.menu").click(function(){
+				$(".top-menu ul").slideToggle("slow" , function(){
+				});
+				});
+				</script>
+				<!--script-nav-->
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="slider">
+			<div id="ipresenter">
+				<div id="intro" class="step" data-x="0" data-y="0" data-thumbnail="images/thumbnails/1.jpg">
+					<img src="images/details.png" />
+					<h2>书籍是人类进步的阶梯</h2>
+				</div>
+
+				<div id="capture" class="step" data-x="1100" data-y="1200" data-scale="1.8" data-rotate="180" data-thumbnail="images/thumbnails/2.jpg">
+					<img src="images/details.png" />
+					<h2>为中华崛起而读书</h2>
+				</div>
+
+				<div id="view" class="step" data-x="-300" data-y="600" data-scale="0.2" data-rotate="270" data-thumbnail="images/thumbnails/3.jpg">
+					<img src="images/details.png" />
+					<h2>始终拥护中国共产党</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- header-section-ends -->
+	<!-- content-section-starts -->
+
+	<!-- products-section-starts -->
+	<div class="products-section">
+		<div class="container">
+			<div class="product-section-head-text">
+				<h3>
+					书籍
+					<span>经典</span>
+				</h3>
+			</div>
+			<div class="bottom-grids collections">
+				<div class="bottom-grids-left">
+					<div class="f-products">
+						<!----sreen-gallery-cursual---->
+						<div class="sreen-gallery-cursual">
+							<!-- requried-jsfiles-for owl -->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							<script src="js/owl.carousel.js"></script>
+							<script>
+									    $(document).ready(function() {
+									      $("#owl-demo").owlCarousel({
+									        items : 3,
+									        lazyLoad : true,
+									        autoPlay : true,
+									        navigation : true,
+									        navigationText :  false,
+									        pagination : false,
+									      });
+									    });
+									   </script>
+							<!-- //requried-jsfiles-for owl -->
+							<!-- start content_slider -->
+							<div id="owl-demo" class="owl-carousel text-center">
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p1.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p2.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$89</span>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single-page.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p3.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$149</span>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p1.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p3.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--//sreen-gallery-cursual---->
+
+						</div>
+					</div>
+					<div class="d-products product-section-head-text">
+						<h3>书籍板块</h3>
+						<!----sreen-gallery-cursual---->
+						<div class="sreen-gallery-cursual">
+							<!-- requried-jsfiles-for owl -->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							<script src="js/owl.carousel.js"></script>
+							<script>
+									    $(document).ready(function() {
+									      $("#owl-demo1").owlCarousel({
+									        items : 3,
+									        lazyLoad : true,
+									        autoPlay : true,
+									        navigation : true,
+									        navigationText :  false,
+									        pagination : false,
+									      });
+									    });
+									   </script>
+							<!-- //requried-jsfiles-for owl -->
+							<!-- start content_slider -->
+							<div id="owl-demo1" class="owl-carousel text-center">
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p4.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$35.99</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p5.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$86</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p6.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$149</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p1.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p4.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">红楼梦</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--//sreen-gallery-cursual---->
+
+						</div>
+					</div>
+					<div class="product-section-head-text">
+						<!----sreen-gallery-cursual---->
+						<div class="sreen-gallery-cursual">
+							<!-- requried-jsfiles-for owl -->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							<script src="js/owl.carousel.js"></script>
+							<script>
+									    $(document).ready(function() {
+									      $("#owl-demo2").owlCarousel({
+									        items : 3,
+									        lazyLoad : true,
+									        autoPlay : true,
+									        navigation : false,
+									        navigationText :  false,
+									        pagination : false,
+									      });
+									    });
+									   </script>
+							<!-- //requried-jsfiles-for owl -->
+							<!-- start content_slider -->
+							<div id="owl-demo2" class="owl-carousel text-center">
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p7.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">西游记</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$35.99</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p8.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">西游记</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$86</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p9.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">三国演义</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$149</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p10.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">西游记</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div onClick="location.href='single.html';" class="product-grid">
+										<div class="product-pic">
+											<img src="images/p8.jpg" title="红楼梦" />
+										</div>
+										<div class="product-pic-info">
+											<h4>
+												<a href="#">三国演义</a>
+											</h4>
+											<div class="product-pic-info-price-cart">
+												<div class="product-pic-info-price">
+													<span>$129</span>
+													<label></label>
+												</div>
+												<div class="product-pic-info-cart">
+													<a class="p-btn" href="single.html">加入购物车</a>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--//sreen-gallery-cursual---->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- products-section-ends -->
+<!-- brands-section-starts -->
+
+<!-- brands-section-ends -->
+</div>
+<!-- content-section-ends -->
+<!-- contact-section-starts -->
+
+<!-- contact-section-ends -->
+<!-- footer-section-starts -->
+<div class="footer">
+<div class="container">
+	<div class="col-md-6 bottom-menu">
+		<ul>
+			<li>
+				<a href="index.html">主页</a>
+			</li>
+			<li>
+				<a href="product.html">书籍中心</a>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-6 copy-rights">
+		<p>
+			&copy; 2016 Template by
+			<a href="http://www.genban.org" target="target_blank">计算机科学技术3班</a>
+		</p>
+	</div>
+	<div class="clearfix"></div>
+</div>
+</div>
+<!-- footer-section-ends -->
+</body>
+</html>
